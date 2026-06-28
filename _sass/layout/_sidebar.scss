@@ -74,6 +74,16 @@
   @include breakpoint($x-large) {
     width: $right-sidebar-width;
   }
+
+  &.sticky {
+    @include breakpoint($large) {
+      position: fixed;
+      top: 0;
+      z-index: 20;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+  }
 }
 
 

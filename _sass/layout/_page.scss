@@ -49,6 +49,7 @@
 }
 
 .page__content {
+  overflow: hidden;   /* contain floated TOC sidebar and prevent text overlap */
 
   h2 {
     padding-bottom: 0.5em;

@@ -195,17 +195,20 @@ $(document).ready(function () {
         stack.pop();
       }
 
-      var $li = $('<li>').append(
-        $('<a>', { href: '#' + id, text: text })
-      ).on('click', function (e) {
+      var $a = $('<a>', { href: '#', text: text }).on('click', function (e) {
         e.preventDefault();
         var target = $('#' + id);
         if (target.length) {
           $('html, body').animate({
             scrollTop: target.offset().top - scssMastheadHeight - 15
           }, 400);
+          // Update URL hash without triggering native scroll
+          if (history.pushState) {
+            history.pushState(null, '', '#' + id);
+          }
         }
       });
+      var $li = $('<li>').append($a);
 
       if (stack.length === 0) {
         // Top-level item (h2)

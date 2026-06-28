@@ -64,10 +64,9 @@
   margin-bottom: 1em;
 
   @include breakpoint($large) {
-    position: relative;
-    float: right;
-    width: $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);
+    order: 2;                           /* place after content in flex */
+    flex: 0 0 $right-sidebar-width-narrow;
+    margin-left: span(0.5 of 12);       /* gap between content and TOC */
     z-index: 10;
   }
 
@@ -79,7 +78,7 @@
     @include breakpoint($large) {
       position: sticky;
       top: $masthead-height;
-      float: right;
+      align-self: flex-start;
       z-index: 20;
       max-height: calc(100vh - #{$masthead-height});
       overflow-y: auto;

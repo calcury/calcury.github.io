@@ -3,24 +3,34 @@
    ========================================================================== */
 /* Color codes used for the theme */
 $primary-color              : #30e3ca;
-$background                 : #1a2421;
-$background-light           : #243430;
-$background-lighter        : #2e443f;
-$text                      : #e8f5f3;
-$text-muted                : #b8d5d1;
+
+/* Dark backgrounds — matching default dark theme */
+$background                 : #474747;
+$background-light           : mix(#fff, $background, 80%);
+$background-lighter        : mix(#fff, $background, 90%);
+
+/* Text colors */
+$text                      : #ffffff;
+$text-muted                : #f3f3f3;
+
+/* Accent: keep mint teal */
 $link                      : #4effd9;
-$link-dark                 : #7cffdf;
-$link-light                : #2bd4bd;
-$footer                    : #0f1614;
-$border                    : #2e443f;
-$border-light              : #3d5950;
+$link-dark                 : mix(#000, $link, 25%);
+$link-light                : mix(#fff, $link, 25%);
+
+/* Footer matching default dark */
+$footer                    : #474747;
+
+/* Borders */
+$border                    : mix(#fff, #7a8288, 50%);
+$border-light              : mix(#fff, #474747, 80%);
 
 /* Color codes used for the site */
-$danger-color               : #e74c3c;
+$danger-color               : #ee5f5b;
 $info-color                 : #4effd9;
-$notice-color               : #30e3ca;
-$success-color              : #2ecc71;
-$warning-color              : #f39c12;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;

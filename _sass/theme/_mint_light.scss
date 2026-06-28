@@ -7,24 +7,34 @@ $dark-primary-color         : mix(#000, $primary-color, 40%);
 $darker-primary-color       : mix(#000, $primary-color, 60%);
 $light-primary-color        : mix(#fff, $primary-color, 50%);
 $lighter-primary-color      : mix(#fff, $primary-color, 90%);
-$background                 : #f3f6f6;
-$background-light           : #ffffff;
-$background-lighter        : #fafbfb;
-$text                      : #40514e;
-$text-muted                : #5c6d6a;
+
+/* Neutral backgrounds — matching the default theme's clean white aesthetic */
+$background                 : #ffffff;
+$background-light           : #fafafa;
+$background-lighter        : #fcfcfc;
+
+/* Neutral text — matching default theme's $dark-gray / $gray */
+$text                      : #494f52;
+$text-muted                : #7a8288;
+
+/* Accent: keep mint teal as the brand color */
 $link                      : #11999e;
 $link-dark                 : mix(#000, $link, 25%);
 $link-light                : mix(#fff, $link, 25%);
-$footer                    : #30e3ca;
-$border                    : mix(#fff, #40514e, 75%);
-$border-dark               : mix(#fff, #40514e, 60%);
+
+/* Subtle footer — matching default theme's light gray */
+$footer                    : #f3f4f4;
+
+/* Subtle borders — matching default theme's $lighter-gray / $light-gray */
+$border                    : #eef0f0;
+$border-dark               : #bdc1c4;
 
 /* Color codes used for the site */
-$danger-color               : #e74c3c;
+$danger-color               : #ee5f5b;
 $info-color                 : #11999e;
-$notice-color               : #30e3ca;
-$success-color              : #2ecc71;
-$warning-color              : #f39c12;
+$notice-color               : #7a8288;
+$success-color              : #62c462;
+$warning-color              : #f89406;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;

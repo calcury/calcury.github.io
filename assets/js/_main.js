@@ -168,4 +168,84 @@ $(document).ready(function () {
     }
   });
 
+  // Generate table of contents from page headings
+  var buildTOC = function () {
+    var tocContainer = $('.toc__menu');
+    if (!tocContainer.length) return;
+
+    var headings = $('.page__content').find('h2, h3, h4');
+    if (!headings.length) {
+      tocContainer.parents('.sidebar__right').hide();
+      return;
+    }
+
+    var stack = [];        // track nesting level
+    var currentLevel = 2;  // start at h2
+
+    headings.each(function () {
+      var $h = $(this);
+      var level = parseInt($h.prop('tagName').substr(1));  // 'H2' → 2
+      var id = $h.attr('id');
+      if (!id) return;       // skip headings without an anchor id
+
+      var text = $h.text();
+
+      // Pop stack back to correct parent level
+      while (stack.length > 0 && stack[stack.length - 1].level >= level) {
+        stack.pop();
+      }
+
+      var $li = $('<li>').append(
+        $('<a>', { href: '#' + id, text: text })
+      ).on('click', function (e) {
+        e.preventDefault();
+        var target = $('#' + id);
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - scssMastheadHeight - 15
+          }, 400);
+        }
+      });
+
+      if (stack.length === 0) {
+        // Top-level item (h2)
+        tocContainer.append($li);
+      } else {
+        // Nested item — find or create the child <ul>
+        var parentLI = stack[stack.length - 1].li;
+        var $sub = parentLI.children('ul');
+        if (!$sub.length) {
+          $sub = $('<ul>').appendTo(parentLI);
+        }
+        $sub.append($li);
+      }
+
+      stack.push({ level: level, li: $li });
+    });
+  };
+
+  buildTOC();
+
+  // Update the active TOC item based on scroll position
+  var updateActiveTOC = function () {
+    var headings = $('.page__content').find('h2, h3, h4[id]');
+    if (!headings.length) return;
+
+    var scrollTop = $(window).scrollTop() + scssMastheadHeight + 20;
+    var currentId = null;
+
+    headings.each(function () {
+      if ($(this).offset().top <= scrollTop) {
+        currentId = $(this).attr('id');
+      }
+    });
+
+    $('.toc__menu a').removeClass('active');
+    if (currentId) {
+      $('.toc__menu a[href="#' + currentId + '"]').addClass('active');
+    }
+  };
+
+  $(window).on('scroll', updateActiveTOC);
+
 });

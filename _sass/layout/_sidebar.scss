@@ -125,6 +125,11 @@
       &:hover {
         text-decoration: underline;
       }
+
+      &.active {
+        color: var(--global-link-color);
+        font-weight: bold;
+      }
     }
 
     > li > a {

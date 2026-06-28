@@ -78,7 +78,7 @@
   &.sticky {
     @include breakpoint($large) {
       position: sticky;
-      top: calc(#{$masthead-height} + 5em);
+      top: calc(#{$masthead-height} + 10em);
       float: right;
       z-index: 20;
       max-height: calc(100vh - #{$masthead-height} - 3em);

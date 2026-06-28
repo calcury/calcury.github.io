@@ -99,6 +99,8 @@
   box-shadow: $box-shadow;
   padding: 0;
   overflow: hidden;
+  text-transform: none;
+  letter-spacing: normal;
 
   .nav__title {
     color: #fff;
@@ -131,8 +133,8 @@
       font-weight: bold;
       line-height: 1.5;
       border-bottom: 1px solid var(--global-border-color);
-      text-decoration: underline;
-      text-decoration-color: var(--global-link-color);
+      text-decoration: underline !important;
+      text-decoration-color: var(--global-link-color) !important;
       text-underline-offset: 3px;
       text-transform: none;
 

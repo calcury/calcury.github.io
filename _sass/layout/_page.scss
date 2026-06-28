@@ -42,23 +42,48 @@
 }
 
 /*
-   When TOC is present as a preceding floated sibling of page__inner-wrap,
-   we need page__inner-wrap to NOT clear the float but sit beside it.
-   overflow: hidden on page__inner-wrap creates a BFC that shares the line
-   with the right-floated TOC.  Also reduce the right suffix so the content
-   gets more horizontal space.
+   When TOC is present, use flexbox so TOC and content sit side-by-side
+   with a predictable ratio.  Content auto-fills whatever remains after the
+   200 px TOC (+ gap).  No right suffix: padding-right removed so the TOC
+   sits flush against the right edge — no wasted whitespace.
 */
 .page.has-toc {
   @include breakpoint($large) {
-    @include suffix(0.75 of 12);
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding-right: 0;
+
+    .page__inner-wrap {
+      flex: 1 1 0;
+      min-width: 0;
+      float: none;
+      width: auto;
+      display: block;
+    }
   }
 }
 
-.page.has-toc .page__inner-wrap {
+/* Override the float-based TOC positioning inside the flex container */
+.page.has-toc .sidebar__right {
   @include breakpoint($large) {
-    display: flow-root;
+    order: 1;  /* push to after content (TOC comes first in DOM) */
     float: none;
-    width: auto;
+    margin-left: 1.5em;
+    margin-right: 0;
+    flex: 0 0 auto;
+    width: 200px;
+  }
+}
+
+/* Keep sticky behavior when .sticky is present */
+.page.has-toc .sidebar__right.sticky {
+  @include breakpoint($large) {
+    position: sticky;
+    top: calc(#{$masthead-height} + 2em);
+    z-index: 20;
+    max-height: calc(100vh - #{$masthead-height} - 3em);
+    overflow-y: auto;
   }
 }
 

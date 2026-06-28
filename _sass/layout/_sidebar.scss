@@ -64,9 +64,11 @@
   margin-bottom: 1em;
 
   @include breakpoint($large) {
-    order: 2;                           /* place after content in flex */
-    flex: 0 0 $right-sidebar-width-narrow;
-    margin-left: span(0.5 of 12);       /* gap between content and TOC */
+    float: right;
+    width: $right-sidebar-width-narrow;
+    margin-left: 1em;                  /* gap between content and TOC */
+    margin-right: -1em;                /* shift right into suffix area */
+    position: relative;
     z-index: 10;
   }
 
@@ -77,10 +79,10 @@
   &.sticky {
     @include breakpoint($large) {
       position: sticky;
-      top: $masthead-height;
-      align-self: flex-start;
+      top: calc(#{$masthead-height} + 2em);
+      float: right;
       z-index: 20;
-      max-height: calc(100vh - #{$masthead-height});
+      max-height: calc(100vh - #{$masthead-height} - 3em);
       overflow-y: auto;
     }
   }
@@ -115,38 +117,40 @@
 
     a {
       display: block;
-      padding: 0.25rem 0;
+      padding: 0.4rem 0.8rem;
       color: var(--global-text-color);
       font-size: $type-size-7;
-      font-weight: normal;
+      font-weight: bold;
       line-height: 1.5;
-      border-bottom: 0;
+      border-bottom: 1px solid var(--global-border-color);
+      text-decoration: none;
 
       &:hover {
-        text-decoration: underline;
+        color: inherit;
+        background: var(--global-link-color-hover);
       }
 
       &.active {
         color: var(--global-link-color);
-        font-weight: bold;
+        background: var(--global-border-color);
       }
     }
 
-    > li > a {
-      font-weight: bold;
+    li:last-child > a {
+      border-bottom: 0;
     }
 
     li ul > li a {
-      padding-left: 1rem;
+      padding-left: 1.6rem;
       font-weight: normal;
     }
 
     li ul li ul > li a {
-      padding-left: 2rem;
+      padding-left: 2.4rem;
     }
 
     li ul li ul li ul > li a {
-      padding-left: 3rem;
+      padding-left: 3.2rem;
     }
   }
 }

@@ -1,3 +1,9 @@
+---
+title: "Academic Pages 完整工作流程指南"
+permalink: /step/
+sitemap: false
+---
+
 # Academic Pages 个人学术网站 —— 完整工作流程指南
 
 本仓库基于 **Academic Pages** 模板（Jekyll + GitHub Pages），用于搭建个人学术主页，托管在 GitHub Pages 上，**免费、无广告**。

@@ -41,6 +41,27 @@
   }
 }
 
+/*
+   When TOC is present as a preceding floated sibling of page__inner-wrap,
+   we need page__inner-wrap to NOT clear the float but sit beside it.
+   overflow: hidden on page__inner-wrap creates a BFC that shares the line
+   with the right-floated TOC.  Also reduce the right suffix so the content
+   gets more horizontal space.
+*/
+.page.has-toc {
+  @include breakpoint($large) {
+    @include suffix(0.75 of 12);
+  }
+}
+
+.page.has-toc .page__inner-wrap {
+  @include breakpoint($large) {
+    display: flow-root;
+    float: none;
+    width: auto;
+  }
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;

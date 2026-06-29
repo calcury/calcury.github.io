@@ -80,7 +80,7 @@
 .page.has-toc .sidebar__right.sticky {
   @include breakpoint($large) {
     position: sticky;
-    // top: calc(#{$masthead-height});
+    top: calc(#{$masthead-height} - 3em);
     z-index: 20;
     max-height: calc(100vh - #{$masthead-height} - 3em);
     overflow-y: auto;

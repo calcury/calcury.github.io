@@ -9,13 +9,13 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title: "Building & Sharing Ideas"
+title: "[CN] Territorial Community"
 title_separator: "--"
-name: &name "calcury"
-description: &description "Your Name's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
-url: https://calcury.github.io # The base hostname & protocol for your site
+name: &name "[CN] Territorial"
+description: &description "[CN] Territorial Community" # Update this with a general description of your site, this is the default if not overridden by a page
+url: https://cnclan.github.io # The base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "calcury/calcury.github.io"
+repository: "cnclan/ccnclan.github.io"
 remote_theme: "academicpages/academicpages.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -23,14 +23,14 @@ remote_theme: "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar: "profile.jpg"
-  name: "Your Sidebar Name"
+  avatar: "profile.png"
+  name: "[CN] Territorial"
   pronouns: "he/his"
-  bio: "Short biography for the left-hand sidebar"
-  location: "Earth"
-  employer: "Red Brick University"
+  bio: "Territorial.io [CN] Clan is a community of Chinese and forign friends who love this strategic game"
+  location: "China"
+  employer: "Territorial"
   uri: # URL
-  email: "calcury@163.com"
+  email: ""
 
   # Academic websites
   academia: # URL
@@ -50,7 +50,7 @@ author:
   bitbucket: # Username - Update with your username on the site
   codepen: # Username
   dribbble: # Username
-  github: "calcury"
+  github: "cnclan"
   kaggle: # Username
   stackoverflow: # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
 

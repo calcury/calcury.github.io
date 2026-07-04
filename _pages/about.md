@@ -1,6 +1,8 @@
 ---
 permalink: /
 title: "Calcury's Academic Blog"
+toc: true        # 开启右侧目录
+toc_sticky: true # 可选：滚动时目录固定在顶部
 author_profile: true
 redirect_from: 
   - /about/

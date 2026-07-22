@@ -26,9 +26,9 @@ author:
   avatar: "profile.jpg"
   name: "Calcury"
   pronouns: "he/his"
-  bio: "Short biography for the left-hand sidebar"
-  location: "Earth"
-  employer: "Red Brick University"
+  bio: "Research-driven Computer Science undergraduate, with research interests spanning computer vision, and multimodal learning. Exploring deep learning, reinforcement learning, and robotic systems. Hands-on skills in PyTorch, OpenCV, ROS2."
+  location: "Hangzhou, China"
+  employer: "University of Nottingham Ningbo China"
   uri: # URL
   email: "calcury@163.com"
 

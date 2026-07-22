@@ -11,8 +11,8 @@ locale: "en-US"
 site_theme: "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title: "Building & Sharing Ideas"
 title_separator: "--"
-name: &name "calcury"
-description: &description "Your Name's academic portfolio" # Update this with a general description of your site, this is the default if not overridden by a page
+name: &name "Shengqin Jiang"
+description: &description "Computer Science undergraduate @ UNNC | Computer Vision & Multimodal Learning" # Update this with a general description of your site, this is the default if not overridden by a page
 url: https://calcury.github.io # The base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "calcury/calcury.github.io"
@@ -24,9 +24,9 @@ remote_theme: "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar: "profile.jpg"
-  name: "Calcury"
-  pronouns: "he/his"
-  bio: "Research-driven Computer Science undergraduate, with research interests spanning computer vision, and multimodal learning. Exploring deep learning, reinforcement learning, and robotic systems. Hands-on skills in PyTorch, OpenCV, ROS2."
+  name: "Shengqin Jiang"
+  pronouns: "calcury"
+  bio: "Research-driven CS undergraduate with interests in computer vision, multimodal learning, and embodied AI"
   location: "Hangzhou, China"
   employer: "University of Nottingham Ningbo China"
   uri: # URL

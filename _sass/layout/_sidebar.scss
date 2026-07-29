@@ -61,9 +61,10 @@
 }
 
 .sidebar__right {
-  margin-bottom: 1em;
+  display: none;                       /* Hide TOC on mobile devices */
 
   @include breakpoint($large) {
+    display: block;                    /* Show TOC on desktop */
     float: right;
     width: $right-sidebar-width-narrow;
     margin-left: 1em;                  /* gap between content and TOC */

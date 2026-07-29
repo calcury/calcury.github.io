@@ -2,7 +2,7 @@
    MINT THEME - DARK VERSION
    ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #30e3ca;
+$primary-color              : #d4be98;
 
 /* Dark backgrounds — matching default dark theme */
 $background                 : #474747;
@@ -14,7 +14,7 @@ $text                      : #ffffff;
 $text-muted                : #f3f3f3;
 
 /* Accent: keep mint teal */
-$link                      : #4effd9;
+$link                      : #d4be98;
 $link-dark                 : mix(#000, $link, 25%);
 $link-light                : mix(#fff, $link, 25%);
 
@@ -27,7 +27,7 @@ $border-light              : mix(#fff, #474747, 80%);
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
-$info-color                 : #4effd9;
+$info-color                 : #d4be98;
 $notice-color               : #7a8288;
 $success-color              : #62c462;
 $warning-color              : #f89406;

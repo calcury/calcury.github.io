@@ -221,8 +221,8 @@
   }
 }
 .sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-family: $serif;
+  font-size: $type-size-4;
 }
 
 .sidebar .author__desktop {
@@ -234,6 +234,8 @@
 
 .author__pronouns {
   margin: 0;
+  font-family: $serif;
+  font-size: $type-size-5;
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -243,6 +245,8 @@
 
 .author__bio {
   margin: 0;
+  font-family: $serif;
+  font-size: $type-size-6;
 
   @include breakpoint($large) {
     margin-top: 10px;

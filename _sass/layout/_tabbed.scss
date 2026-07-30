@@ -8,6 +8,9 @@
   margin-bottom: 1em;
 
   > .archive__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
     background: var(--card-bg, #f8f9fa);
     border: 1px solid var(--card-border, #c8ccd0);
     border-radius: 12px;
@@ -25,15 +28,7 @@
     font-size: 1em;
     font-family: $sans-serif;
     font-weight: 600;
-
-    a {
-      color: var(--global-text-color);
-      text-decoration: none;
-
-      &:hover {
-        color: var(--global-link-color);
-      }
-    }
+    color: var(--global-text-color);
   }
 
   .page__meta,
@@ -54,6 +49,25 @@
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
+  }
+
+  .card-arrow {
+    align-self: flex-end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0.7em;
+    margin-top: 0.5em;
+    margin-right: -0.3em;
+    border-radius: 8px;
+    color: var(--global-link-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--badge-bg, rgba(17, 153, 158, 0.12));
+    }
   }
 }
 

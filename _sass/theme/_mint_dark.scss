@@ -42,6 +42,10 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
+/* Selection colors */
+$selection-bg                 : mix(#fff, $primary-color, 20%);
+$selection-text               : #ffffff;
+
 /* Dark theme for the site */
 html[data-theme="dark"] {
   --global-base-color                 : #{$primary-color};
@@ -60,7 +64,17 @@ html[data-theme="dark"] {
   --global-text-color                 : #{$text};
   --global-text-color-light           : #{$text-muted};
   --global-thead-color                : #{$background-lighter};
+  --global-selection-bg-color         : #{$selection-bg};
+  --global-selection-text-color       : #{$selection-text};
+}
 
+html[data-theme="dark"] ::selection {
+  background-color: var(--global-selection-bg-color);
+  color: var(--global-selection-text-color);
+}
+html[data-theme="dark"] ::-moz-selection {
+  background-color: var(--global-selection-bg-color);
+  color: var(--global-selection-text-color);
 }
 
 /* Footer styling for dark mode */

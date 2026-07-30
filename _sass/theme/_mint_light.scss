@@ -46,6 +46,10 @@ $navicon-height             : 4px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
+/* Selection colors */
+$selection-bg                 : mix(#fff, $primary-color, 85%);
+$selection-text               : #000000;
+
 /* Light theme for the site */
 :root {
   --global-base-color                 : #{$primary-color};
@@ -64,7 +68,17 @@ $sidebar-screen-min-width   : 1024px;
   --global-text-color                 : #{$text};
   --global-text-color-light           : #{$text-muted};
   --global-thead-color                : #{$lighter-primary-color};
+  --global-selection-bg-color         : #{$selection-bg};
+  --global-selection-text-color       : #{$selection-text};
+}
 
+::selection {
+  background-color: var(--global-selection-bg-color);
+  color: var(--global-selection-text-color);
+}
+::-moz-selection {
+  background-color: var(--global-selection-bg-color);
+  color: var(--global-selection-text-color);
 }
 
 footer {

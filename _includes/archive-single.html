@@ -26,7 +26,12 @@
       </div>
     {% endif %}
 
-    <h2 class="archive__item-title" itemprop="headline">{{ title }}</h2>
+    <h2 class="archive__item-title" itemprop="headline">
+      <span>{{ title }}</span>
+      <a href="{{ base_path }}{{ post.url }}" class="card-arrow" aria-label="View details">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </h2>
     
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
@@ -74,8 +79,5 @@
       <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
     {% endif %}
 
-    <a href="{{ base_path }}{{ post.url }}" class="card-arrow" aria-label="View details">
-      <i class="fas fa-arrow-right" aria-hidden="true"></i>
-    </a>
   </article>
 </div>

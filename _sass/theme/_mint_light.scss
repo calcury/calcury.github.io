@@ -47,8 +47,8 @@ $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Selection colors */
-$selection-bg                 : #d4ecf5;
-$selection-text               : #000000;
+$selection-bg                 : #1e3a6b;
+$selection-text               : #ffffff;
 
 /* Light theme for the site */
 :root {
@@ -72,11 +72,11 @@ $selection-text               : #000000;
   --global-selection-text-color       : #{$selection-text};
 }
 
-::selection {
+:root ::selection {
   background-color: var(--global-selection-bg-color);
   color: var(--global-selection-text-color);
 }
-::-moz-selection {
+:root ::-moz-selection {
   background-color: var(--global-selection-bg-color);
   color: var(--global-selection-text-color);
 }

@@ -422,19 +422,6 @@ bundle exec jekyll serve -l -H localhost
 > 💡 修改 `_config.yml` 需要**重启** Jekyll 服务器；修改 Markdown 文件会自动刷新。
 > 💡 Windows 用户建议通过 **WSL（Windows Subsystem for Linux）** 运行以上命令。
 
-### 方式二：使用 Docker
-
-```bash
-chmod -R 777 .
-docker compose up
-```
-
-访问 **http://localhost:4000** 预览。
-
-### 方式三：VS Code DevContainer
-
-用 VS Code 打开项目，会提示重新在容器中打开（或按 `F1` → `Dev Containers: Reopen in Container`），容器自动运行 Jekyll 服务器，访问 http://localhost:4000 即可预览。
-
 ---
 
 ## 📝 高级功能

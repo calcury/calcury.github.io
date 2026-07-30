@@ -1,150 +1,28 @@
 /* ==========================================================================
-   TABBED LAYOUT — PRISM-inspired design
+   ARCHIVE CARD STYLING — PRISM-inspired
+   Applied to each archive item (Publications, Talks, Teaching, etc.)
+   but NOT to CV (which uses different markup structure inside <ul>)
    ========================================================================== */
 
-.tab-container {
-  margin-top: 1.5em;
-}
-
-/* Tab navigation
-   ========================================================================== */
-
-.tab-nav-wrapper {
-  position: sticky;
-  top: 70px;
-  z-index: 20;
-  margin-bottom: 2em;
-}
-
-.tab-nav {
-  position: relative;
-  display: flex;
-  gap: 0;
-  background: var(--tab-nav-bg, rgba(255, 255, 255, 0.75));
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--tab-nav-border, rgba(208, 213, 221, 0.4));
-  border-radius: 14px;
-  padding: 4px;
-  box-shadow: var(--tab-nav-shadow, 0 1px 3px rgba(0, 0, 0, 0.04));
-}
-
-.tab-btn {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  padding: 0.7em 1.2em;
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  color: var(--tab-btn-color, #64748b);
-  font-family: $sans-serif;
-  font-size: $type-size-5;
-  font-weight: 500;
-  cursor: pointer;
-  transition: color 0.25s ease;
-  white-space: nowrap;
-
-  i, svg {
-    font-size: 0.9em;
-    opacity: 0.7;
-    transition: opacity 0.25s ease;
-  }
-
-  &:hover {
-    color: var(--tab-btn-hover-color, #334155);
-    i, svg { opacity: 1; }
-  }
-
-  &.active {
-    color: var(--tab-btn-active-color, #d4a562);
-    i, svg { opacity: 1; }
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--tab-btn-active-color, #d4a562);
-    outline-offset: 2px;
-  }
-}
-
-.tab-indicator {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  height: calc(100% - 8px);
-  width: calc(33.333% - 4px);
-  background: var(--tab-indicator-bg, rgba(212, 165, 98, 0.12));
-  border: 1px solid var(--tab-indicator-border, rgba(212, 165, 98, 0.25));
-  border-radius: 10px;
-  transition: left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-              width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  pointer-events: none;
-}
-
-/* Tab panels
-   ========================================================================== */
-
-.tab-panels {
-  position: relative;
-}
-
-.tab-panel {
-  display: none;
-  animation: tab-enter 0.3s ease;
-
-  &.active {
-    display: block;
-  }
-}
-
-@keyframes tab-enter {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tab-section-title {
-  margin: 1.5em 0 0.75em;
-  padding-bottom: 0.4em;
-  font-size: $type-size-4;
-  font-family: $header-font-family;
-  color: var(--global-text-color);
-  border-bottom: 2px solid var(--tab-accent-color, #d4a562);
-  display: inline-block;
-}
-
-/* Card-style archive items inside tabs
-   ========================================================================== */
-
-.tab-panel .list__item {
-  padding-right: 0;
+.archive > .list__item {
   margin-bottom: 1em;
 
-  .archive__item {
-    background: var(--tab-card-bg, #ffffff);
-    border: 1px solid var(--tab-card-border, #eef0f0);
+  > .archive__item {
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--card-border, #eef0f0);
     border-radius: 12px;
     padding: 1.25em 1.5em;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-      border-color: var(--tab-accent-color, #d4a562);
-      box-shadow: 0 4px 16px rgba(212, 165, 98, 0.1);
+      border-color: var(--global-link-color, #11999e);
+      box-shadow: 0 4px 16px rgba(17, 153, 158, 0.08);
     }
   }
 
   .archive__item-title {
     margin-top: 0;
-    font-size: $type-size-5;
+    font-size: 1em;
     font-family: $sans-serif;
     font-weight: 600;
 
@@ -153,7 +31,7 @@
       text-decoration: none;
 
       &:hover {
-        color: var(--tab-accent-color, #d4a562);
+        color: var(--global-link-color, #11999e);
       }
     }
   }
@@ -171,66 +49,60 @@
     display: inline-block;
     padding: 0.2em 0.6em;
     margin: 0.15em 0.15em 0.15em 0;
-    background: var(--tab-badge-bg, rgba(212, 165, 98, 0.1));
-    color: var(--tab-accent-color, #d4a562);
+    background: var(--badge-bg, rgba(17, 153, 158, 0.1));
+    color: var(--global-link-color, #11999e);
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
     transition: background 0.2s ease, color 0.2s ease;
 
     &:hover {
-      background: var(--tab-accent-color, #d4a562);
+      background: var(--global-link-color, #11999e);
       color: #fff;
     }
   }
 }
 
-/* Wordwrap Google Scholar link */
+/* Google Scholar wordwrap */
 .wordwrap {
   margin-bottom: 1em;
   padding: 0.6em 1em;
-  background: var(--tab-card-bg, #ffffff);
-  border: 1px solid var(--tab-card-border, #eef0f0);
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--card-border, #eef0f0);
   border-radius: 10px;
   font-size: $type-size-6;
   color: var(--global-text-color-light);
 
   a {
-    color: var(--tab-accent-color, #d4a562);
+    color: var(--global-link-color, #11999e);
     font-weight: 500;
   }
 }
 
-/* Dark theme overrides
-   ========================================================================== */
+/* Category headings in Publications page */
+.archive h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.4em;
+  font-size: $type-size-4;
+  font-family: $header-font-family;
+  border-bottom: 2px solid var(--global-link-color, #11999e);
+  display: inline-block;
 
-html[data-theme="dark"] {
-  --tab-nav-bg: rgba(30, 41, 59, 0.75);
-  --tab-nav-border: rgba(71, 85, 105, 0.5);
-  --tab-nav-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  --tab-btn-color: #94a3b8;
-  --tab-btn-hover-color: #e2e8f0;
-  --tab-btn-active-color: #d4a562;
-  --tab-indicator-bg: rgba(212, 165, 98, 0.15);
-  --tab-indicator-border: rgba(212, 165, 98, 0.3);
-  --tab-accent-color: #d4a562;
-  --tab-card-bg: rgba(30, 41, 59, 0.6);
-  --tab-card-border: rgba(71, 85, 105, 0.4);
-  --tab-badge-bg: rgba(212, 165, 98, 0.12);
+  & + hr {
+    display: none;
+  }
 }
 
-/* Light theme defaults */
+/* Dark theme overrides */
+html[data-theme="dark"] {
+  --card-bg: rgba(30, 41, 59, 0.6);
+  --card-border: rgba(71, 85, 105, 0.4);
+  --badge-bg: rgba(78, 255, 217, 0.12);
+}
+
 :root {
-  --tab-nav-bg: rgba(255, 255, 255, 0.75);
-  --tab-nav-border: rgba(208, 213, 221, 0.4);
-  --tab-nav-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  --tab-btn-color: #64748b;
-  --tab-btn-hover-color: #334155;
-  --tab-btn-active-color: #d4a562;
-  --tab-indicator-bg: rgba(212, 165, 98, 0.12);
-  --tab-indicator-border: rgba(212, 165, 98, 0.25);
-  --tab-accent-color: #d4a562;
-  --tab-card-bg: #ffffff;
-  --tab-card-border: #eef0f0;
-  --tab-badge-bg: rgba(212, 165, 98, 0.1);
+  --card-bg: #ffffff;
+  --card-border: #eef0f0;
+  --badge-bg: rgba(17, 153, 158, 0.1);
 }

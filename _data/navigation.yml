@@ -9,13 +9,13 @@
 
 main:
   - title: "Publications"
-    url: /publications/#tab-publications
+    url: /publications/
 
   - title: "Talks"
-    url: /publications/#tab-talks
+    url: /talks/    
 
   - title: "Teaching"
-    url: /publications/#tab-teaching
+    url: /teaching/    
     
   - title: "Portfolio"
     url: /portfolio/

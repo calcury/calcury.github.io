@@ -8,15 +8,15 @@
   margin-bottom: 1em;
 
   > .archive__item {
-    background: var(--card-bg, #ffffff);
-    border: 1px solid var(--card-border, #eef0f0);
+    background: var(--card-bg, #f8f9fa);
+    border: 1px solid var(--card-border, #c8ccd0);
     border-radius: 12px;
     padding: 1.25em 1.5em;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-      border-color: var(--global-link-color, #11999e);
-      box-shadow: 0 4px 16px rgba(17, 153, 158, 0.08);
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -31,7 +31,7 @@
       text-decoration: none;
 
       &:hover {
-        color: var(--global-link-color, #11999e);
+        color: var(--global-link-color);
       }
     }
   }
@@ -50,16 +50,10 @@
     padding: 0.2em 0.6em;
     margin: 0.15em 0.15em 0.15em 0;
     background: var(--badge-bg, rgba(17, 153, 158, 0.1));
-    color: var(--global-link-color, #11999e);
+    color: var(--global-link-color);
     border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
-    transition: background 0.2s ease, color 0.2s ease;
-
-    &:hover {
-      background: var(--global-link-color, #11999e);
-      color: #fff;
-    }
   }
 }
 
@@ -67,14 +61,14 @@
 .wordwrap {
   margin-bottom: 1em;
   padding: 0.6em 1em;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--card-border, #eef0f0);
+  background: var(--card-bg, #f8f9fa);
+  border: 1px solid var(--card-border, #c8ccd0);
   border-radius: 10px;
   font-size: $type-size-6;
   color: var(--global-text-color-light);
 
   a {
-    color: var(--global-link-color, #11999e);
+    color: var(--global-link-color);
     font-weight: 500;
   }
 }
@@ -86,7 +80,7 @@
   padding-bottom: 0.4em;
   font-size: $type-size-4;
   font-family: $header-font-family;
-  border-bottom: 2px solid var(--global-link-color, #11999e);
+  border-bottom: 2px solid var(--global-link-color);
   display: inline-block;
 
   & + hr {
@@ -96,13 +90,13 @@
 
 /* Dark theme overrides */
 html[data-theme="dark"] {
-  --card-bg: rgba(30, 41, 59, 0.6);
-  --card-border: rgba(71, 85, 105, 0.4);
+  --card-bg: rgba(45, 55, 72, 0.75);
+  --card-border: rgba(100, 115, 135, 0.5);
   --badge-bg: rgba(78, 255, 217, 0.12);
 }
 
 :root {
-  --card-bg: #ffffff;
-  --card-border: #eef0f0;
+  --card-bg: #f8f9fa;
+  --card-border: #c8ccd0;
   --badge-bg: rgba(17, 153, 158, 0.1);
 }

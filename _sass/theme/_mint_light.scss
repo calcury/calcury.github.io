@@ -2,7 +2,7 @@
   MINT THEME - LIGHT VERSION
   ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #1a7a9e;
+$primary-color              : #d4a562;
 $dark-primary-color         : mix(#000, $primary-color, 40%);
 $darker-primary-color       : mix(#000, $primary-color, 60%);
 $light-primary-color        : mix(#fff, $primary-color, 50%);
@@ -17,8 +17,8 @@ $background-lighter        : #fcfcfc;
 $text                      : #494f52;
 $text-muted                : #7a8288;
 
-/* Accent: keep mint teal as the brand color */
-$link                      : #11999e;
+/* Accent: gold */
+$link                      : #d4a562;
 $link-dark                 : mix(#000, $link, 25%);
 $link-light                : mix(#fff, $link, 25%);
 
@@ -31,7 +31,7 @@ $border-dark               : #bdc1c4;
 
 /* Color codes used for the site */
 $danger-color               : #ee5f5b;
-$info-color                 : #11999e;
+$info-color                 : #d4a562;
 $notice-color               : #7a8288;
 $success-color              : #62c462;
 $warning-color              : #f89406;
@@ -47,7 +47,7 @@ $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Selection colors */
-$selection-bg                 : #c5d9e8;
+$selection-bg                 : #e8d5b8;
 $selection-text               : #000000;
 
 /* Light theme for the site */

@@ -1,36 +1,65 @@
 ---
 layout: archive
-title: "Publications"
+title: "Research"
 permalink: /publications/
 author_profile: true
 ---
+
+{% include base_path %}
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
-{% include base_path %}
+<div class="tab-container">
+  <div class="tab-nav-wrapper">
+    <nav class="tab-nav" role="tablist" aria-label="Research sections">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-publications" data-tab="publications">
+        <i class="fas fa-scroll" aria-hidden="true"></i> Publications
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-talks" data-tab="talks">
+        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i> Talks
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-teaching" data-tab="teaching">
+        <i class="fas fa-graduation-cap" aria-hidden="true"></i> Teaching
+      </button>
+      <div class="tab-indicator" aria-hidden="true"></div>
+    </nav>
+  </div>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+  <div class="tab-panels">
+    <div class="tab-panel active" id="tab-publications" role="tabpanel" aria-label="Publications">
+      {% if site.publication_category %}
+        {% for category in site.publication_category %}
+          {% assign title_shown = false %}
+          {% for post in site.publications reversed %}
+            {% if post.category != category[0] %}
+              {% continue %}
+            {% endif %}
+            {% unless title_shown %}
+              <h2 class="tab-section-title">{{ category[1].title }}</h2>
+              {% assign title_shown = true %}
+            {% endunless %}
+            {% include archive-single.html %}
+          {% endfor %}
+        {% endfor %}
+      {% else %}
+        {% for post in site.publications reversed %}
+          {% include archive-single.html %}
+        {% endfor %}
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+    </div>
 
+    <div class="tab-panel" id="tab-talks" role="tabpanel" aria-label="Talks" hidden>
+      {% for post in site.talks reversed %}
+        {% include archive-single-talk.html %}
+      {% endfor %}
+    </div>
 
-
+    <div class="tab-panel" id="tab-teaching" role="tabpanel" aria-label="Teaching" hidden>
+      {% for post in site.teaching reversed %}
+        {% include archive-single.html %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

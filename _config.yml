@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title: "Home"
+title: "Home - Building & Sharing Ideas" # Update this with the title of your site
 title_separator: "--"
 name: &name "Shengqin Jiang"
 description: &description "Computer Science undergraduate @ UNNC | Computer Vision & Multimodal Learning" # Update this with a general description of your site, this is the default if not overridden by a page

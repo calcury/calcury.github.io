@@ -251,4 +251,84 @@ $(document).ready(function () {
 
   $(window).on('scroll', updateActiveTOC);
 
+  /* ==========================================================================
+     Tab switching for publications/talks/teaching
+     ========================================================================== */
+
+  var tabContainer = $('.tab-container');
+  if (tabContainer.length) {
+    var tabNav = tabContainer.find('.tab-nav');
+    var tabBtns = tabNav.find('.tab-btn');
+    var indicator = tabNav.find('.tab-indicator');
+    var panels = tabContainer.find('.tab-panel');
+
+    function moveIndicator(btn) {
+      if (!btn.length || !indicator.length) return;
+      indicator.css({
+        left: btn.position().left + 'px',
+        width: btn.outerWidth() + 'px'
+      });
+    }
+
+    function activateTab(tabId) {
+      var btn = tabBtns.filter('[data-tab="' + tabId + '"]');
+      if (!btn.length) return;
+
+      tabBtns.removeClass('active').attr('aria-selected', 'false');
+      btn.addClass('active').attr('aria-selected', 'true');
+
+      panels.removeClass('active').attr('hidden', '');
+      var panel = panels.filter('#tab-' + tabId);
+      panel.addClass('active').removeAttr('hidden');
+
+      moveIndicator(btn);
+
+      // Update hash without scrolling
+      if (history.pushState) {
+        history.pushState(null, '', '#tab-' + tabId);
+      }
+    }
+
+    tabBtns.on('click', function () {
+      activateTab($(this).data('tab'));
+    });
+
+    // Initialize from hash
+    function initFromHash() {
+      var hash = window.location.hash.replace('#', '');
+      var validTabs = [];
+      tabBtns.each(function () { validTabs.push($(this).data('tab')); });
+
+      if (hash && validTabs.indexOf(hash) !== -1) {
+        activateTab(hash);
+      } else {
+        // Activate first tab
+        var first = tabBtns.first().data('tab');
+        activateTab(first);
+      }
+    }
+
+    initFromHash();
+
+    // Handle hashchange (browser back/forward)
+    $(window).on('hashchange', function () {
+      var hash = window.location.hash.replace('#', '');
+      var validTabs = [];
+      tabBtns.each(function () { validTabs.push($(this).data('tab')); });
+      if (hash && validTabs.indexOf(hash) !== -1) {
+        activateTab(hash);
+      }
+    });
+
+    // Re-check indicator position on resize
+    var resizeTimer;
+    $(window).on('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        var activeBtn = tabBtns.filter('.active');
+        if (activeBtn.length) moveIndicator(activeBtn);
+      }, 100);
+    });
+  }
+
 });
